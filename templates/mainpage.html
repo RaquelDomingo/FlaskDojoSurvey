@@ -1,0 +1,29 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='survey.css') }}">
+    </head>
+    <body>
+    <div class="container">
+    <img src="{{ url_for('static', filename='logo.png') }}">
+    <h1>SURVEY</h1>
+        <form action='/result' method='post'>
+            <p>Name:</p><input type="text" name="name">
+            <p>Dojo Location:</p>
+                <select name="location">
+                    {% for i in option_list %}
+                        <option name="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+            <p>Favorite Language:</p>
+                <select name="language">
+                    {% for j in language_list %}
+                        <option name="{{ j }}">{{ j }}</option>
+                    {% endfor %}
+                </select>
+            <p>Comment:</p> <textarea rows="4" cols="50" name='comment'></textarea>
+            <p><input type="submit" value="Submit"></p>
+        </form>
+    </div>
+    </body>
+</html>

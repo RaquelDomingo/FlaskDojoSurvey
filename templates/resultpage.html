@@ -1,0 +1,19 @@
+<html>
+    <head>
+      <title>Results of Survey</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='survey.css') }}">
+    </head>
+    <body>
+    <div class="container">
+      <h1>Submitted Info</h1>
+      <p>Name: </p>{{name}}
+      <p>Dojo Location: </p>{{location}}
+      <p>Favorite Language: </p>{{language}}
+      <p>Comment: </p>{{comment}}
+    <form action='/'>
+        <button>Go back</button>
+    </form>
+     <img src="{{ url_for('static', filename='ThankYou.png') }}">
+    </div>
+    </body>
+</html>
